@@ -16,6 +16,7 @@ public class FileUtils {
             try {
                 return parser.parse(new FileReader(f)).getAsJsonObject();
             } catch (FileNotFoundException e) {}
+			catch (IllegalStateException e2) {}
         }
 
         return new JsonObject();
